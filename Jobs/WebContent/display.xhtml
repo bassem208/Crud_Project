@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+		<h:head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		<h:outputStylesheet library="css"  name="style.css" />
+		
+		</h:head>
+
+<body >
+<h:form>
+	<h:dataTable value="#{formController.all}" var="o">
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<h:outputLabel value="#{o.id}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Name</f:facet>
+			<h:outputLabel value="#{o.name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Description</f:facet>
+			<h:outputLabel value="#{o.description}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Salary</f:facet>
+			<h:outputLabel value="#{o.value}" />
+		</h:column>
+		<h:column>
+			<h:commandButton action="#{formController.updateOne(o)}" value="Edit" />
+		</h:column>
+		<h:column>
+			<h:commandButton action="#{formController.onDelete(o)}" value="Delete" />
+		</h:column>
+	</h:dataTable>
+	<h:commandButton action="#{formController.showInsert()}" value="Insert one" />
+</h:form>
+
+</body>
+		
+</html>

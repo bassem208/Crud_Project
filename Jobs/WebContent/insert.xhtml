@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+   		
+		<h:head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		
+		</h:head>
+
+<h:body >
+<h:form>
+	<h:panelGrid columns="2">
+		<h:outputLabel value="The job name : " />
+		<h:inputText value="#{work.name}" />
+		<h:outputLabel value="The job description : " />
+		<h:inputText value="#{work.description}" />
+		<h:outputLabel value="The job salary : " />
+		<h:inputText value="#{work.value}" />
+	</h:panelGrid>
+		<h:commandButton action="#{formController.submit()}" value="Insert" />
+</h:form>
+
+</h:body>
+		
+</html>

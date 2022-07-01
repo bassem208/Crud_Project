@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+		<h:head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		<h:outputStylesheet library="css"  name="style.css" />
+		</h:head>
+
+<body>
+	<h:form id="connectionForm">
+		<h1>Connection</h1>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Username :" />
+			<h:inputText value="#{user.login}" />
+			<h:outputLabel value="Password :" />
+			<h:inputSecret id="password" value="#{user.password}" />
+			<h:message for="password" />
+		</h:panelGrid>
+		<h:commandButton action="#{formController.connection()}" value="Login" styleClass="button-connect" />
+		<h:commandButton action="#{formController.showChange()}" value="Change password" styleClass="button-change" />
+	</h:form>
+
+</body>
+		
+</html>
